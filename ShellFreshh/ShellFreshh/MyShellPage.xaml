@@ -4,9 +4,9 @@
         <ShellSection>
             <ShellContent>
                 <local:MainPage>
-                    <local:MainPage.BindingContext>
+                    <!--<local:MainPage.BindingContext>
                         <local:MainViewModel />
-                    </local:MainPage.BindingContext>
+                    </local:MainPage.BindingContext>-->
                 </local:MainPage>
             </ShellContent>
         </ShellSection>
@@ -14,7 +14,11 @@
     <ShellItem Title="About">
         <ShellSection>
             <ShellContent>
-                <local:MainPage />
+                <local:AboutPage>
+                    <!--<local:AboutPage.BindingContext>
+                        <local:AboutViewModel/>
+                    </local:AboutPage.BindingContext>-->
+                </local:AboutPage>
             </ShellContent>
         </ShellSection>
     </ShellItem>

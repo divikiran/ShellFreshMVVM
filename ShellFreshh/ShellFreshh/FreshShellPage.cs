@@ -8,8 +8,8 @@ namespace ShellFreshh
 {
     public class FreshShellPage : Shell, IFreshNavigationService
     {
-        List<Page> _tabs = new List<Page>();
-        public IEnumerable<Page> TabbedPages { get { return _tabs; } }
+        List<Page> _shellItem = new List<Page>();
+        public IEnumerable<Page> ShellItems { get { return _shellItem; } }
 
         public FreshShellPage()
         {
@@ -20,7 +20,82 @@ namespace ShellFreshh
             this.RouteScheme = "App";
         }
 
-        public string NavigationServiceName => "ShellNavigation";
+        public FreshShellPage(Page page)
+            : this(page, Constants.DefaultNavigationServiceName)
+        {
+            this.Icon = "3Bar";
+            this.FlyoutBehavior = FlyoutBehavior.Flyout;
+            this.Route = "ShellFreshh";
+            this.RouteHost = "microsoft.com";
+            this.RouteScheme = "App";
+        }
+
+        public FreshShellPage(Page page, string navigationPageName)
+
+        {
+            var pageModel = page.GetModel();
+            if (pageModel == null)
+                throw new InvalidCastException("BindingContext was not a FreshBasePageModel on this Page");
+
+            pageModel.CurrentNavigationServiceName = navigationPageName;
+            NavigationServiceName = navigationPageName;
+            RegisterNavigation();
+
+            var shellPage = page as Shell;
+            if (shellPage != null)
+            {
+                //this._shellItem.Add(shellPage);
+                foreach (ShellItem shellItem in shellPage.Items)
+                {
+                    var c = shellItem.Items;
+                    foreach (ShellSection cc in c)
+                    {
+                        ShellContentCollection scc = cc.Items;
+                        foreach (ShellContent sitem in scc)
+                        {
+                            var shellContentPage = sitem.Content as Page;
+                            if (shellContentPage == null)
+                                break;
+
+                            //var vm = shellContentPage.GetModel();
+                            //if (vm == null)
+                            //break;
+
+                            var name = GetTypeByPageName(shellContentPage.GetType());
+                            var pageType = Type.GetType(name);
+                            if (pageType == null)
+                                throw new Exception(name + " not found");
+                            var vm = (FreshBasePageModel)FreshIOC.Container.Resolve(pageType);
+
+
+
+                            var bindedPage = FreshPageModelResolver.ResolvePageModel(vm.GetType(), null);
+                            sitem.Content = bindedPage;
+                            //sitem.BindingContext = vm;
+                        }
+
+                    }
+
+                    //AddShell
+                    this.Items.Add(shellItem);
+                }
+            }
+        }
+
+
+        public string GetTypeByPageName(Type pageModelType)
+        {
+            return pageModelType.AssemblyQualifiedName
+                .Replace("Page", "ViewModel");
+                //.Replace("View", "ViewModel");
+        }
+
+        protected void RegisterNavigation()
+        {
+            FreshIOC.Container.Register<IFreshNavigationService>(this, NavigationServiceName);
+        }
+
+        public string NavigationServiceName { get; private set; }
 
         public void NotifyChildrenPageWasPopped()
         {
@@ -87,7 +162,10 @@ namespace ShellFreshh
             Page page = FreshPageModelResolver.ResolvePageModel<T>(data);
 
             page.GetModel().CurrentNavigationServiceName = NavigationServiceName;
-            _tabs.Add(page);
+            _shellItem.Add(page);
+
+
+
             page.Title = title;
             if (icon != null)
             {
@@ -97,7 +175,7 @@ namespace ShellFreshh
             {
                 Title = title,
                 Route = route,
-                
+
             };
             var section = new ShellSection();
             var shellContent = new ShellContent
@@ -108,6 +186,10 @@ namespace ShellFreshh
             shellItem.Items.Add(section);
             this.Items.Add(shellItem);
 
+            //if (_shellItem.Count == 1)
+            //{
+            //    this.CurrentItem = shellItem;
+            //}
             return page;
         }
     }

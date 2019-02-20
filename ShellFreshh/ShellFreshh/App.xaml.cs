@@ -15,14 +15,21 @@ namespace ShellFreshh
             //MainPage = new MyShellPage();
 
             //var page = FreshPageModelResolver.ResolvePageModel<MyShellViewModel>();
+            //MainPage = page;
+
+            //var page = FreshPageModelResolver.ResolvePageModel<MyShellViewModel>();
             //var basicNavContainer = new FreshNavigationContainer(page);
             //MainPage = basicNavContainer;
 
 
-            var page = new FreshShellPage();
-            page.AddShell<MainViewModel>("Home", "a");
-            page.AddShell<AboutViewModel>("About", "b");
-            MainPage = page;
+            //var page = new FreshShellPage();
+            //page.AddShell<MainViewModel>("Home", "a");
+            //page.AddShell<AboutViewModel>("About", "b");
+            //MainPage = page;
+
+            var page = FreshPageModelResolver.ResolvePageModel<MyShellViewModel>();
+            var shellPage = new FreshShellPage(page);
+            MainPage = shellPage;
         }
 
 
