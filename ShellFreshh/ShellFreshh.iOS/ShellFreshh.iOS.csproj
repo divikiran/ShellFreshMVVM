@@ -140,6 +140,69 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\star.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\star.imageset\star.png" />
+    <ImageAsset Include="Assets.xcassets\star.imageset\star%402x.png" />
+    <ImageAsset Include="Assets.xcassets\star.imageset\star%403x.png" />
+    <ImageAsset Include="Assets.xcassets\splash_screen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\splash_screen.imageset\Splash_screen.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_screen.imageset\Splash_screen%402x.jpg" />
+    <ImageAsset Include="Assets.xcassets\splash_screen.imageset\Splash_screen%403x.jpg" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\search.png" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\search%402x.png" />
+    <ImageAsset Include="Assets.xcassets\search.imageset\search%403x.png" />
+    <ImageAsset Include="Assets.xcassets\photo.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\photo.imageset\photo.png" />
+    <ImageAsset Include="Assets.xcassets\photo.imageset\photo%402x.png" />
+    <ImageAsset Include="Assets.xcassets\photo.imageset\photo%403x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_vertical_w.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_vertical_w.imageset\logo_vertical_w.png" />
+    <ImageAsset Include="Assets.xcassets\logo_vertical_w.imageset\logo_vertical_w%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_vertical_w.imageset\logo_vertical_w%403x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_microsoft_w.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_microsoft_w.imageset\logo_microsoft_w.png" />
+    <ImageAsset Include="Assets.xcassets\logo_microsoft_w.imageset\logo_microsoft_w%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_microsoft_w.imageset\logo_microsoft_w%403x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_horizontal_b.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_horizontal_b.imageset\logo_horizontal-b.png" />
+    <ImageAsset Include="Assets.xcassets\logo_horizontal_b.imageset\logo_horizontal-b%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_horizontal_b.imageset\logo_horizontal-b%403x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_header_b.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logo_header_b.imageset\logo_header_b.png" />
+    <ImageAsset Include="Assets.xcassets\logo_header_b.imageset\logo_header_b%402x.png" />
+    <ImageAsset Include="Assets.xcassets\logo_header_b.imageset\logo_header_b%403x.png" />
+    <ImageAsset Include="Assets.xcassets\ia.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\ia.imageset\ia.png" />
+    <ImageAsset Include="Assets.xcassets\ia.imageset\ia%402x.png" />
+    <ImageAsset Include="Assets.xcassets\ia.imageset\ia%403x.png" />
+    <ImageAsset Include="Assets.xcassets\free_shipping.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\free_shipping.imageset\free_shipping.png" />
+    <ImageAsset Include="Assets.xcassets\free_shipping.imageset\free_shipping%402x.png" />
+    <ImageAsset Include="Assets.xcassets\free_shipping.imageset\free_shipping%403x.png" />
+    <ImageAsset Include="Assets.xcassets\filters.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\filters.imageset\filters.png" />
+    <ImageAsset Include="Assets.xcassets\filters.imageset\filters%402x.png" />
+    <ImageAsset Include="Assets.xcassets\filters.imageset\filters%403x.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%402x.png" />
+    <ImageAsset Include="Assets.xcassets\close.imageset\close%403x.png" />
+    <ImageAsset Include="Assets.xcassets\cart.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\cart.imageset\cart.png" />
+    <ImageAsset Include="Assets.xcassets\cart.imageset\cart%402x.png" />
+    <ImageAsset Include="Assets.xcassets\cart.imageset\cart%403x.png" />
+    <ImageAsset Include="Assets.xcassets\capture.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\capture.imageset\capture.png" />
+    <ImageAsset Include="Assets.xcassets\capture.imageset\capture%402x.png" />
+    <ImageAsset Include="Assets.xcassets\capture.imageset\capture%403x.png" />
+    <ImageAsset Include="Assets.xcassets\app_icon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\app_icon.appiconset\Icon1024.png" />
+    <ImageAsset Include="Assets.xcassets\app_icon.appiconset\Icon120.png" />
+    <ImageAsset Include="Assets.xcassets\app_icon.appiconset\Icon180.png" />
+    <ImageAsset Include="Assets.xcassets\3bar.imageset\3bar.png" />
+    <ImageAsset Include="Assets.xcassets\3bar.imageset\3bar%402x.png" />
+    <ImageAsset Include="Assets.xcassets\3bar.imageset\Contents.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -159,5 +222,8 @@
       <Project>{720FF380-2114-42BC-8375-3ECC57EE3A61}</Project>
       <Name>ShellFreshh</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets.xcassets\3bar.imageset\" />
   </ItemGroup>
 </Project>
