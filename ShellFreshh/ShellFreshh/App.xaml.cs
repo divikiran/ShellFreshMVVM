@@ -1,4 +1,5 @@
 ﻿using System;
+using FreshMvvm;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,11 @@ namespace ShellFreshh
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //MainPage = new MyShellPage();
+
+            var page = FreshPageModelResolver.ResolvePageModel<MyShellViewModel>();
+            var basicNavContainer = new FreshNavigationContainer(page);
+            MainPage = basicNavContainer;
         }
 
         protected override void OnStart()
