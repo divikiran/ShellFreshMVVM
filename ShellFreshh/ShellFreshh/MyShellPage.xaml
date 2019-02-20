@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-       xmlns:local="clr-namespace:ShellFreshh"
-       x:Class="ShellFreshh.MyShellPage">
-      <ShellItem Title="Home">
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:ShellFreshh" x:Class="ShellFreshh.MyShellPage">
+    <ShellItem Title="Home">
         <ShellSection>
             <ShellContent>
-                <local:MainPage />
+                <local:MainPage>
+                    <local:MainPage.BindingContext>
+                        <local:MainViewModel />
+                    </local:MainPage.BindingContext>
+                </local:MainPage>
             </ShellContent>
         </ShellSection>
     </ShellItem>
